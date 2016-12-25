@@ -27,7 +27,12 @@ namespace FaceEmotionRecognition
         }
         private async Task<FaceEmotionDetection> DetectFaceAndEmotionsAsync(MediaFile inputFile)
         {
-            
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                await DisplayAlert("Network error",
+                  "Please check your network connection and retry.", "OK");
+                return null;
+            }
             try
             {
                 // Get emotions from the specified stream
