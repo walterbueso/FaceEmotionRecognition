@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FaceEmotionRecognition"
+             x:Class="FaceEmotionRecognition.MainPage">
+
+ <StackLayout Orientation="Vertical">
+    <Button x:Name="TakePictureButton" Clicked="TakePictureButton_Clicked"
+      Text="Take from camera"/>
+    <Button x:Name="UploadPictureButton" Clicked="UploadPictureButton_Clicked"
+      Text="Pick a photo"/>
+    <ActivityIndicator x:Name="Indicator1" IsVisible="False" IsRunning="False" />
+    <Image x:Name="Image1" HeightRequest="240" />
+    <StackLayout Orientation="Horizontal" Padding="3">
+      <Label Text="Gender: "/>
+      <Label x:Name="GenderLabel" Text="{Binding Path=Gender}" />
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="3">
+      <Label Text="Age: "/>
+      <Label x:Name="AgeLabel" Text="{Binding Path=Age}"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="3">
+      <Label Text="Emotion: "/>
+      <Label x:Name="EmotionLabel" Text="{Binding Path=Emotion}"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="3">
+      <Label Text="Smile: "/>
+      <Label x:Name="SmileLabel"
+        Text="{Binding Path=Smile}"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="3">
+      <Label Text="Glasses: "/>
+      <Label x:Name="GlassesLabel" Text="{Binding Path=Glasses}"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="3">
+      <Label Text="Beard: "/>
+      <Label x:Name="BeardLabel"
+        Text="{Binding Path=Beard}"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="3">
+      <Label Text="Moustache: "/>
+      <Label x:Name="MoustacheLabel"
+        Text="{Binding Path=Moustache}"/>
+    </StackLayout>
+  </StackLayout>
+
+</ContentPage>
